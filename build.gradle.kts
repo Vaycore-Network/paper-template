@@ -12,6 +12,7 @@ repositories {
     mavenCentral()
     maven("https://repo.papermc.io/repository/maven-public/")
     maven("https://repo.codemc.io/repository/maven-public/")
+    maven("https://mvn.c4vxl.de/vaycore/")
 }
 
 dependencies {
@@ -23,6 +24,9 @@ dependencies {
     // Command API
     implementation("dev.jorel:commandapi-paper-shade:11.1.0")
     implementation("dev.jorel:commandapi-kotlin-paper:11.1.0")
+
+    // Vaycore API
+    implementation("de.c4vxl:vaycore-api:1.0.0")
 }
 
 kotlin {

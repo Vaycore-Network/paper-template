@@ -1,5 +1,7 @@
 package de.c4vxl.papertemplate
 
+import de.c4vxl.vaycoreapi.language.Lang
+import de.c4vxl.vaycoreapi.utils.ResourceUtils
 import dev.jorel.commandapi.CommandAPI
 import dev.jorel.commandapi.CommandAPIPaperConfig
 import org.bukkit.plugin.java.JavaPlugin
@@ -26,6 +28,15 @@ class Main : JavaPlugin() {
     override fun onEnable() {
         // Enable CommandAPI
         CommandAPI.onEnable()
+
+        // Register translations
+        ResourceUtils.readResource("langs", Main::class.java).split("\n")
+            .forEach { langName ->
+                Lang.provideLanguageTranslations<Main>(
+                    langName,
+                    ResourceUtils.readResource("lang/$langName.yml", Main::class.java)
+                )
+            }
 
         logger.info("[+] $name has been enabled!")
     }
