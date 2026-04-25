@@ -30,7 +30,16 @@ It is recommended to
 - Rename the root path from `de.c4vxl.papertemplate` to your own group id
 
 <br>
- 
+
+### Download the Vaycore-API
+- Either download it from the [latest release](https://github.com/Vaycore-Network/VaycoreAPI/releases/latest) manually
+- or run the setup script to download it automatically:
+   ```sh
+  sh setup.sh
+   ```
+
+<br>
+
 #### 5. Reinitializing the git repo
 1. Delete the old repo:<br>
    On Windows:
